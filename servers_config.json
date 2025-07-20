@@ -1,0 +1,35 @@
+{
+  "mcpServers": {
+    "weather": {
+      "command": "python",
+      "args": ["weather_server.py"],
+      "transport": "stdio"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "D:\\CodeWork\\mcp_test\\mcp-get-weather"
+      ],
+      "transport": "stdio"
+    },
+    "mcp-server-firecrawl": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_KEY": "fc-81ea22b6fbaf4cc4bce9e55ced378919"
+      },
+      "transport": "stdio"
+    },
+    "chatbi": {
+      "command": "node",
+      "args": ["D:\\CodeWork\\mcp_test\\chatbi-mcp-server\\dist\\index.js"],
+      "env": {
+        "CHATBI_DOMAIN": "https://retail.yiwendata.com",
+        "CHATBI_TOKEN": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJjbCIsImlhdCI6MTc1Mjc2MTM2OCwiZXhwIjoxNzUzMzY2MTY4fQ.b35Ys19stay-X55Te_8L4jnz_Pqzxqzl3Im6uHqxVGg"
+      },
+      "transport": "stdio"
+    }
+  }
+}
